@@ -2,7 +2,7 @@ use context starter2024
 #1
 fun area(width :: Number , height :: Number)-> Number : 
   doc: " area : width , height : area=width*height"
-  doc: "purpose: Takes input of height and width of an object and returns the area of the object"
+  #"purpose: Takes input of height and width of an object and returns the area of the object"
   
   width * height
 end
@@ -13,7 +13,7 @@ end
 
 fun total_cost(Number_of_shirts :: Number, print_on_shirt :: String) -> Number:
   doc: "total_cost: num of shirts , string to print on shirt : total cost of making shirt"
-  doc:"purpose: function allows user to input the number of tshirts to make and string to print, then uses length of string and price per character and base price to calculate total cost"
+  #"purpose: function allows user to input the number of tshirts to make and string to print, then uses length of string and price per character and base price to calculate total cost"
   Number_of_shirts * (5.00 + (0.10 * string-length(print_on_shirt)))
 end
 
