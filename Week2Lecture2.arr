@@ -1,7 +1,9 @@
 use context starter2024
 #1
 fun area(width :: Number , height :: Number)-> Number : 
-  doc: "Calculates the area using height and width"
+  doc: " area : width , height : area=width*height"
+  doc: "purpose: Takes input of height and width of an object and returns the area of the object"
+  
   width * height
 end
 
@@ -10,18 +12,19 @@ end
 # "Expression to calculate price of 7 tshirts with the message 'Hello World' written on it is 7*(5.00 + 0.10*11)"
 
 fun total_cost(Number_of_shirts :: Number, print_on_shirt :: String) -> Number:
-  doc: "This function calculates the total cost of a shirt based on the number of shirts you want to make and the length of the design on the shirt, where 5.00 is the base price and 0.10 is the price per character for the design"
+  doc: "total_cost: num of shirts , string to print on shirt : total cost of making shirt"
+  doc:"purpose: function allows user to input the number of tshirts to make and string to print, then uses length of string and price per character and base price to calculate total cost"
   Number_of_shirts * (5.00 + (0.10 * string-length(print_on_shirt)))
 end
 
 #3
 fun celsius_to_fahrenheit(temp :: Number) ->Number:
-  doc:"This function converts the input temperature in celsius to fahrenheit using the formula"
+  doc:"celsius_to_fahrenheit : temperature in celsius : temperature in Fahrenheit"
   (temp * (9/5)) + 32
 end
 
 fun fahrenheit_to_celsius(temp :: Number) ->Number:
-  doc:"This function converts the input temperature in fahrenheit to celsius using the formula"
+  doc:"fahrenheit_to_celsius : temperaute in fahrenheit : temperature in celsius"
   (temp - 32) * (5/9)
 end
 
@@ -34,7 +37,7 @@ end
 
 #4
 fun create_flag(angle :: Number,square_side :: Number , square_color :: String , circle_radius :: Number , circle_color :: String , star_side :: Number , star_color :: String ) :
-  doc:"This function allows the user to create a flag by asking the user for the desired parameters of the flag"
+  doc:"create_flag : angleOfRotation in degrees,square_side-LengthOfsquare,square_color-ColorOfSquare,circle_radius-RadiusOfCirlceDesired,circle_color-ColorOfCircle,star_side-LengthOfStarSides,star_color-ColorOfStar : Creates Desired Flag"
   diamond=rotate(angle,square(square_side,"solid",square_color))
   circle_emblem=circle(circle_radius,"solid",circle_color)
   Star=star(star_side,"solid",star_color)
