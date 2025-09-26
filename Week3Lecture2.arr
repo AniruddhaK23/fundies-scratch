@@ -12,6 +12,7 @@ plants = load-table:
   plant_height_cm :: Number,
   plant_color :: String
   source: csv-table-url("https://raw.githubusercontent.com/NU-London/LCSCI4207-datasets/refs/heads/main/plant_sightings.csv" , default-options)
+    #sanitize converts the csv_data from String to its original data-type
   sanitize location_latitude using num-sanitizer
   sanitize location_longitude using num-sanitizer
   sanitize plant_height_cm using num-sanitizer
@@ -30,6 +31,7 @@ medical = load-table:
   exercise_duration :: Number,
   stress_level ::  Number
   source: csv-table-file("glucose_levels.csv", default-options)
+    #sanitize converts the csv_data from String to its original data-type
   sanitize patient_no using num-sanitizer
   sanitize glucose_level using num-sanitizer
   sanitize insulin_dose using num-sanitizer
@@ -41,6 +43,7 @@ lr-plot(medical, "stress_level","insulin_dose")
 lr-plot(medical,"glucose_level","insulin_dose")
 lr-plot(medical,"exercise_duration","stress_level")
 lr-plot(medical,"stress_level","exercise_duration")
+#compute mean,median and mode for the data
 avg-glucose_level=mean(medical,"glucose_level")
 median-exercise_duration=median(medical,"exercise_duration")
 modes-insulin_dose= modes(medical,"insulin_dose")
