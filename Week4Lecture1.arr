@@ -48,3 +48,5 @@ photos-ordered = photos.order-by("count", false )
 
 freq-bar-chart(places,"Location")
 
+
+places-grouped = group(places,'Subject')
